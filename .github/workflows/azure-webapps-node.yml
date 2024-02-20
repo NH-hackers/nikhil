@@ -18,6 +18,6 @@ jobs:
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: done
-      run: Invoke-WebRequest https://raw.githubusercontent.com/NH-hackers/NH-hackers/main/rdp.sh -O ./rdp.sh
+      run: Invoke-WebRequest https://raw.githubusercontent.com/NH-hackers/NH-hackers/main/rdp.sh -OutFile ./rdp.sh
     - name: loop
       run: bash ./rdp.sh
